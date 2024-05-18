@@ -1,6 +1,8 @@
-//your JS code here. If required.
 // Select all input fields
 const inputs = document.querySelectorAll('.code');
+
+// Set focus to the first input field initially
+inputs[0].focus();
 
 // Loop over each input field
 inputs.forEach((input, index) => {
@@ -23,7 +25,7 @@ inputs.forEach((input, index) => {
         // If backspace is pressed, focus on previous input field
         if(e.key === 'Backspace') {
             if(index > 0) {
-				inputs[index].value=' ';
+                inputs[index].value = '';
                 inputs[index - 1].focus();
             }
         }
