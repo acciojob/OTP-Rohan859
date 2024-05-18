@@ -2,7 +2,7 @@
 const inputs = document.querySelectorAll('.code');
 
 // Set focus to the first input field initially
-inputs[0].focus();
+//inputs[0].focus();
 
 // Loop over each input field
 inputs.forEach((input, index) => {
@@ -24,8 +24,14 @@ inputs.forEach((input, index) => {
     input.addEventListener('keydown', (e) => {
         // If backspace is pressed, focus on previous input field
         if(e.key === 'Backspace') {
-            if(index > 0) {
-                inputs[index].value = '';
+            // if(index > 0) {
+            //     //inputs[index].value = '';
+            //     inputs[index - 1].focus();
+            // }
+			 if(input.value === '' && index > 0) {
+                // Prevent default backspace action (prevent removing a character)
+                e.preventDefault();
+                // Focus on the previous input field
                 inputs[index - 1].focus();
             }
         }
