@@ -23,6 +23,7 @@ inputs.forEach((input, index) => {
         // If backspace is pressed, focus on previous input field
         if(e.key === 'Backspace') {
             if(index > 0) {
+				inputs[index].value=' ';
                 inputs[index - 1].focus();
             }
         }
